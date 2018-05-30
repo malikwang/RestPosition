@@ -1,0 +1,2 @@
+staff:0 voice:0 x:142.11
+staff:1 voice:0 x:142.11

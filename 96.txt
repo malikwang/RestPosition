@@ -1,0 +1,10 @@
+staff:0 voice:0 x:72.13
+staff:0 voice:0 x:132.26
+staff:0 voice:0 x:280.07
+staff:0 voice:0 x:197.47
+staff:0 voice:0 x:204.14
+staff:0 voice:0 x:197.47
+staff:0 voice:0 x:71.98
+staff:0 voice:0 x:131.96
+staff:1 voice:0 x:71.98
+staff:1 voice:0 x:131.96
