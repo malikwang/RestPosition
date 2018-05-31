@@ -1,43 +1,43 @@
-staff:0 voice:0 x:77.55
-staff:0 voice:0 x:12.20
-staff:0 voice:0 x:113.85
-staff:0 voice:0 x:176.45
-staff:0 voice:0 x:239.05
-staff:0 voice:0 x:12.20
-staff:0 voice:0 x:14.36
-staff:0 voice:0 x:64.92
-staff:0 voice:0 x:131.07
-staff:0 voice:0 x:16.27
-staff:0 voice:0 x:222.73
-staff:0 voice:0 x:222.24
-staff:0 voice:0 x:271.35
-staff:0 voice:0 x:251.56
-staff:0 voice:0 x:72.39
-staff:0 voice:0 x:132.79
-staff:0 voice:0 x:193.18
-staff:1 voice:0 x:181.21
-staff:1 voice:0 x:102.70
-staff:1 voice:0 x:61.59
-staff:1 voice:0 x:198.75
-staff:1 voice:0 x:67.41
-staff:1 voice:0 x:197.71
-staff:1 voice:0 x:57.51
-staff:1 voice:0 x:167.02
-staff:1 voice:0 x:113.85
-staff:1 voice:0 x:176.45
-staff:1 voice:0 x:239.05
-staff:1 voice:0 x:103.83
-staff:1 voice:0 x:237.25
-staff:1 voice:0 x:94.31
-staff:1 voice:0 x:203.59
-staff:1 voice:0 x:55.03
-staff:1 voice:0 x:108.81
-staff:1 voice:0 x:108.31
-staff:1 voice:0 x:300.92
-staff:1 voice:0 x:146.76
-staff:1 voice:0 x:337.78
-staff:1 voice:0 x:73.82
-staff:1 voice:0 x:230.71
-staff:1 voice:0 x:72.39
-staff:1 voice:0 x:132.79
-staff:1 voice:0 x:193.18
+77.55
+12.20
+181.21
+102.70
+61.59
+198.75
+67.41
+197.71
+57.51
+167.02
+113.85
+176.45
+239.05
+113.85
+176.45
+239.05
+12.20
+14.36
+103.83
+237.25
+64.92
+131.07
+16.27
+94.31
+203.59
+55.03
+108.81
+222.73
+222.24
+271.35
+251.56
+108.31
+300.92
+146.76
+337.78
+73.82
+230.71
+72.39
+132.79
+193.18
+72.39
+132.79
+193.18
