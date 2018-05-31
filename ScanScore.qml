@@ -25,22 +25,36 @@ MuseScore {
                 cursor.rewind(0);
                 while (cursor.segment) {
                     if (cursor.element === element) {
-                        var note = cursor.element;
-                        var measurex = cursor.measure.pagePos.x.toPrecision(8);
-                        var notex = note.pagePos.x.toPrecision(8);
-                        var defaultx = (notex - measurex) * 10
-                        return new Array(cursor.staffIdx, defaultx.toFixed(2))
+                        var xArray = new Array()
+                        var measureX = cursor.measure.pagePos.x.toPrecision(8);
+                        if (element.type === Element.CHORD) {
+                            var chord = element
+                            for (var i = 0; i < chord.graceNotes.length; i++) {
+                                var graceNote = chord.graceNotes[i]
+                                var graceNoteX = graceNote.pagePos.x.toPrecision(8)
+                                var defaultX = (graceNoteX - measureX) * 10
+                                xArray.push(defaultX.toFixed(2))
+                            }
+                            for (i = 0; i < chord.notes.length; i++) {
+                                var note = chord.notes[i]
+                                var noteX = note.pagePos.x.toPrecision(8)
+                                defaultX = (noteX - measureX) * 10
+                                xArray.push(defaultX.toFixed(2))
+                            }
+                        }
+                        if (element.type === Element.REST) {
+                            var rest = element
+                            var restX = rest.pagePos.x.toPrecision(8)
+                            defaultX = (restX - measureX) * 10
+                            xArray.push(defaultX.toFixed(2))
+                        }
+                        var infoMap = { }
+                        infoMap[cursor.staffIdx] = xArray
+                        return infoMap
                     }
                     cursor.next();
                 }
             }
-        }
-    }
-
-    function processChord(chord) {
-        console.log("chord.notes.length=" + chord.notes.length);
-        for (var i=0; i<chord.notes.length; i++) {
-            processNote(chord.notes[i]);
         }
     }
 
@@ -51,13 +65,19 @@ MuseScore {
                 var element = segment.elementAt(track);
                 if(element){
                     if (element.type === Element.CHORD || element.type === Element.REST){
-                        var information = getElementInformation(element)
-                        if (information[0] === staff){
+                        var infoMap = getElementInformation(element)
+                        for(var key in infoMap){
+                            var staffIdx = key
+                        }
+                        if (staffIdx === staff.toString()){
                             console.log("element: " + element)
-                            console.log(" x:" + information[1])
-                            toWrite += information[1] + "\n"
+                            var xArray = infoMap[staffIdx]
+                            for (var i = 0; i < xArray.length; i++) {
+                                console.log(" x:" + xArray[i])
+                                toWrite += xArray[i] + "\n"
+                            }
                             if (element.type === Element.CHORD){
-                                chordCount += 1;
+                                chordCount += xArray.length;
                             }
                         }
                     }
@@ -72,7 +92,7 @@ MuseScore {
             Qt.quit();
         var score = curScore
         console.log(score.name)
-        outfile.source = "/Users/lisimin/Desktop/xml/Project/" + score.name + ".txt"
+        outfile.source = "/Users/lisimin/Desktop/Project/xml/" + score.name + ".txt"
         var measure = score.firstMeasure
         var measureNumber = 1;
         while (measure) {
